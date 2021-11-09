@@ -8,6 +8,7 @@ And by each month consolidating all customer invoices, creates efficiencies for 
 - python(3.9)
 - django 
 - SQLite
+- jenkins
 
 # Why this project?
 I chose to develop this project in order to acquire skills in the languages of Python and Django.
