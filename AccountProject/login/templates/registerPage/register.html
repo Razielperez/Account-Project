@@ -1,0 +1,34 @@
+{% block body %}
+
+{% load static %} 
+<title>Register Page</title>
+    <link rel="stylesheet" href="{% static './cssLogin/cssLogin.css' %}"> 
+    <div class="container">
+    <div class="left-section">
+    <div class="header">
+        <h1 class="animation a1">Welcome</h1>
+    </div>
+    <div class="form">
+        <form class="form" method="post" action="{% url 'login:submit_registration' %}">
+        {% csrf_token %}
+            <input type="text" class="form-field animation a4" name="firstName" placeholder="First Name" required>
+            <input type="text" class="form-field animation a3" name="lastName" placeholder="Last Name" required>
+            <input type="text" class="form-field animation a3" name="phoneNumber" placeholder="Phone Number" required>
+            <input type="email" class="form-field animation a4" name="Email" placeholder="Email" required>   
+            <input type="text" class="form-field animation a3" name="userName" placeholder="Username" required>
+            <input type="password" class="form-field animation a4" name="password" placeholder="Password" required>   
+            <button class="animation a6">Complete Register</button>
+        </form>    
+    </div>
+    </div>
+    <div class="right-section"></div>
+    </div> 
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}<script>alert("{{ message }}")</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+   
+    
+{% endblock body %}
